@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+  <ion-segment [(ngModel)]="type">
+    <ion-segment-button value="merchants">
+      Merchants
+    </ion-segment-button>
+    <ion-segment-button value="products">
+      Products
+    </ion-segment-button>
+  </ion-segment>
+</div>
+
+<div [ngSwitch]="type">
+
+  <ion-row *ngSwitchCase="'merchants'">
+    <ion-item col-4 *ngFor="let merch of merchants">
+            <img *ngIf="merch.logo" src="{{merch.logo}}">
+            <img *ngIf="!merch.logo" src="assets/no-image-available.png">
+            <p>{{merch.name}}</p>
+        </ion-item>
+  </ion-row>
+
+
+
+  <ion-row *ngSwitchCase="'products'">
+    <ion-item col-4 *ngFor="let product of products">
+        <img *ngIf="product.image" src="{{product.image}}">
+        <img *ngIf="!product.image" src="assets/no-image-available.png">
+        <p>{{product.title}}</p>
+    </ion-item>
+  </ion-row>
+
+</div>
+
+  <!-- <button ion-button secondary menuToggle>Toggle Menu</button> -->
+</ion-content>
