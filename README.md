@@ -9,3 +9,5 @@ $ ionic state restore
 $ ionic platform add android  
 $ ionic run android  
 the app will run on the android emualtor if one was available
+
+after adding any plugin/platform run <code> $ ionic state save</code>  to save it in package.json
