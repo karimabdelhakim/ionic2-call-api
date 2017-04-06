@@ -34,17 +34,15 @@ export class Page2 {
     }
     else{this.platform_name =null}
 
-  this.appVersion.getVersionNumber().then((vers)=>{
-        this.setAppVersion(vers);
-    } )
+    this.appVersion.getVersionNumber().then((vers)=>{
+        this.app_version = vers;
+    })
     this.model = this.device.model
     this.device_token = "a65s4d"
 
   }
 
-setAppVersion(vers){
-  this.app_version = vers;
-}
+
 
 presentAlert(title,message) {
   let alert = this.alertCtrl.create({
@@ -57,11 +55,12 @@ presentAlert(title,message) {
 
   user = {};
   loginForm() {
+    
     this.user["device_platform"] = this.platform_name;
     this.user["app_version"] = this.app_version;
     this.user["device_token"] = this.device_token;
     this.user["device_model"] = this.model;
-    
+   
     this.apiService.login(this.user).subscribe(response => {
 
       this.resp = response;
