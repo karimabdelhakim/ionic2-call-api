@@ -10,7 +10,8 @@ $ ionic platform add android
 $ ionic run android  
 the app will run on the android emualtor if one was available
 
-after adding any plugin/platform run <code> $ ionic state save</code>  to save it in package.json
+after adding any plugin/platform run <code> $ ionic state save</code>  to save it in package.json  
+and <code> $ ionic plugins save</code> to save it in config.xml
 <hr>  
 <hr>  
 to generate splash screen or icon for ios and android run<br>
